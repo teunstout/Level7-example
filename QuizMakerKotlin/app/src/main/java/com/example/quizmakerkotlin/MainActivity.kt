@@ -3,6 +3,7 @@ package com.example.quizmakerkotlin
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initNavigation()
-        viewModel = ViewModelProviders.of(this).get(QuizViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(QuizViewModel::class.java)
     }
 
     private fun initNavigation() {
